@@ -5,21 +5,21 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.1/ghalint_0.1.1_darwin_amd64.tar.gz"
-      sha256 "99c72ebe96b3801661d61cb95b7f677c366298aa113b0141dea7e348602a1ff4"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.2/ghalint_0.1.2_darwin_amd64.tar.gz"
+      sha256 "254613bea8be47366942c1e76bfd3ebade24018aadf6da505dd46bdd5ba8331f"
 
       def install
         bin.install "ghalint"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.1/ghalint_0.1.1_darwin_arm64.tar.gz"
-      sha256 "ebdbad8815d44d139f42e46653b6e5aa372958c131dba05ebe152dab7a83b085"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.2/ghalint_0.1.2_darwin_arm64.tar.gz"
+      sha256 "55b70015efde8fd7d3c0957998424971bfa655a6cd4ff019a90d09e9dd65b63f"
 
       def install
         bin.install "ghalint"
@@ -29,16 +29,16 @@ class Ghalint < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.1/ghalint_0.1.1_linux_arm64.tar.gz"
-      sha256 "1c2fc7fe5c97b3403982c6c990cc84bcc28bff074d4eae511dfec7834d1d9488"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.2/ghalint_0.1.2_linux_arm64.tar.gz"
+      sha256 "7e9dd361ccd389889daedcea8b6b5b67acd8157eb763c3b00bf71acc027e19cb"
 
       def install
         bin.install "ghalint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.1/ghalint_0.1.1_linux_amd64.tar.gz"
-      sha256 "ca0769943ac4356978f77359b4e4cae993d7321e88b50d05f89a0a6052650008"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.1.2/ghalint_0.1.2_linux_amd64.tar.gz"
+      sha256 "5f735594882424d1fa7ba38154e37ab7b001fe6a330f7e6ba293fb0f9682b525"
 
       def install
         bin.install "ghalint"
