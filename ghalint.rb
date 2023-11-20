@@ -5,21 +5,21 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.3/ghalint_0.2.3_darwin_arm64.tar.gz"
-      sha256 "e3e470c81f10996470d04f2f7dbe54d7c330e9df04de23a9edb5b6fc372d2903"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_darwin_arm64.tar.gz"
+      sha256 "cb916be510a8a51117c05bb9f360ca99f003f0df17f48adbc17ac6686c59368e"
 
       def install
         bin.install "ghalint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.3/ghalint_0.2.3_darwin_amd64.tar.gz"
-      sha256 "1471fe159efed59825884167038dc5b6a8cd67f961be959ff551ab093573e723"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_darwin_amd64.tar.gz"
+      sha256 "f782902b3248fcd2fa6a79d0110f76e855a52aeac968927fd35f93be5af7d3f0"
 
       def install
         bin.install "ghalint"
@@ -28,17 +28,17 @@ class Ghalint < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.3/ghalint_0.2.3_linux_arm64.tar.gz"
-      sha256 "0cc9c1f4106bfd3ccc8fc08a15762d7c59c10ba0024159e080753a6e4c0a361c"
+    if Hardware::CPU.intel?
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_linux_amd64.tar.gz"
+      sha256 "f133ee5957464cb1f9ab9407be5a2fdb44e494faa8cf6937d1fe2a2bd62d151f"
 
       def install
         bin.install "ghalint"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.3/ghalint_0.2.3_linux_amd64.tar.gz"
-      sha256 "dd8c992d1d42dff1ac66c840ba44005dcca91fe1ac8987ef200cbcbd18a72d3d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_linux_arm64.tar.gz"
+      sha256 "ba173f416bd88c71131d841c66cc60c458e44b595e997a4fec2b72297dd9cc9e"
 
       def install
         bin.install "ghalint"
