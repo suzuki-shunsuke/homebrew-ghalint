@@ -5,21 +5,21 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_darwin_arm64.tar.gz"
-      sha256 "cb916be510a8a51117c05bb9f360ca99f003f0df17f48adbc17ac6686c59368e"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.5/ghalint_0.2.5_darwin_arm64.tar.gz"
+      sha256 "a271313759d761259fb04cdabdfaef81ebc6f0918718158502a16b5dcdc31343"
 
       def install
         bin.install "ghalint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_darwin_amd64.tar.gz"
-      sha256 "f782902b3248fcd2fa6a79d0110f76e855a52aeac968927fd35f93be5af7d3f0"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.5/ghalint_0.2.5_darwin_amd64.tar.gz"
+      sha256 "f336d88d6734a6f2a461e09e036889f5fb21a868546412d722920238ce82a833"
 
       def install
         bin.install "ghalint"
@@ -28,17 +28,17 @@ class Ghalint < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_linux_amd64.tar.gz"
-      sha256 "f133ee5957464cb1f9ab9407be5a2fdb44e494faa8cf6937d1fe2a2bd62d151f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.5/ghalint_0.2.5_linux_arm64.tar.gz"
+      sha256 "4cddf0454edd96252a59e84b813c0304a91c2d4a1d84f9771e532709ed7f9baa"
 
       def install
         bin.install "ghalint"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.4/ghalint_0.2.4_linux_arm64.tar.gz"
-      sha256 "ba173f416bd88c71131d841c66cc60c458e44b595e997a4fec2b72297dd9cc9e"
+    if Hardware::CPU.intel?
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v0.2.5/ghalint_0.2.5_linux_amd64.tar.gz"
+      sha256 "706fed39feb30ccc931ee29d9227bbb835c8897fc9ce22b9d6d153aa109f963f"
 
       def install
         bin.install "ghalint"
