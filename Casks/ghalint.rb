@@ -2,7 +2,7 @@
 cask "ghalint" do
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  version "1.5.2"
+  version "1.5.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "ghalint" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.2/ghalint_1.5.2_darwin_amd64.tar.gz"
-      sha256 "544134ba5579272de1d0a18db2a079cca8e1d4fc935a073f831e27b0b5dc2545"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.3/ghalint_1.5.3_darwin_amd64.tar.gz"
+      sha256 "26b0e7f47f848ee17f7829d80cb75a8b6a77d87eadb3423a57b5ff5916dbef24"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.2/ghalint_1.5.2_darwin_arm64.tar.gz"
-      sha256 "540436a69f9ef5e09d632d0c15e6b6335867e27df30ecffd1b159161c1b6e295"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.3/ghalint_1.5.3_darwin_arm64.tar.gz"
+      sha256 "f5d463aee96ea2485903218a12143478a517c084f94a3f5ca47f1d90440b4adb"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.2/ghalint_1.5.2_linux_amd64.tar.gz"
-      sha256 "01728c4cc69e7fd57162fc2970867973f9d618a38a7b798ce213eb27bdf8b9e1"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.3/ghalint_1.5.3_linux_amd64.tar.gz"
+      sha256 "5fd6696e6f736750b60a67f0c7f7e43642bda15348d55d261c4d386940a1c02f"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.2/ghalint_1.5.2_linux_arm64.tar.gz"
-      sha256 "ad0941950155e0c6ee3df839f9d8f5932c9b831a81ea3ea36f873ea562f85786"
+      url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v1.5.3/ghalint_1.5.3_linux_arm64.tar.gz"
+      sha256 "40f870601461ef2fc4f5f3df25eb79ec49506abf1c45a0e4d02bbed0e1a88a5e"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/ghalint"]
     end
   end
 
