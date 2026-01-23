@@ -3,7 +3,7 @@ cask "ghalint" do
   name "ghalint"
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  version "1.5.4"
+  version "1.5.5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "ghalint" do
   on_macos do
     on_intel do
       url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v#{version}/ghalint_#{version}_darwin_amd64.tar.gz"
-      sha256 "ba9604b55e512447803a2ad754749a82e3048dcf27b630d2fc068f9c9ab221f2"
+      sha256 "ce76aeb46f051d19a618c4e89ae5ca1d37c5a06f1bac3afb261ff619fd33045f"
     end
     on_arm do
       url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v#{version}/ghalint_#{version}_darwin_arm64.tar.gz"
-      sha256 "3de0a438ebb34a88f9d6af23fac75b698e04597ddd7098115c2273414ff31527"
+      sha256 "db969e288fc788348aa7c1323096d69df28b457c70b4194fb76f14ad058c0be7"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v#{version}/ghalint_#{version}_linux_amd64.tar.gz"
-      sha256 "977555b7142cc057aad4663679772510a9ed3f1687f26f2359d18bb6b67314fe"
+      sha256 "579cbf9024f86a8255ce8acdd56c7792f0f9a7e76063d64cfb7b66ff65c396e4"
     end
     on_arm do
       url "https://github.com/suzuki-shunsuke/ghalint/releases/download/v#{version}/ghalint_#{version}_linux_arm64.tar.gz"
-      sha256 "9b5c41332ee0c83c36d003a95813320a41dd0be9186c4eb1dcb119908adbc0a6"
+      sha256 "c3ab464130015d733bfc75a2851f4fc5b3cb966aca2ed8bc0fa2a029bc0ee6af"
     end
   end
 
